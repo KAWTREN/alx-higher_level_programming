@@ -7,4 +7,4 @@ if __name__ == "__main__":
     else:
         print(n-1, "argument:")
         for i in range(1, n):
-            print(i, ":", sys.argv[i])
+            print("{}: {}".format(i, sys.argv[i]))
