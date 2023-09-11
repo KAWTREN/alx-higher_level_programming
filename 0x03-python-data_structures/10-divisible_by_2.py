@@ -2,6 +2,10 @@
 def divisible_by_2(my_list=[]):
     if not my_list:
         return None
+    result = []
     for i in my_list:
         if i % 2 == 0:
-            return i
+            result.append(True)
+        else:
+            result.append(False)
+    return result
