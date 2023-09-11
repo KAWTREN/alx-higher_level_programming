@@ -1,21 +1,19 @@
-import ctypes
+#include <Python.h>
 
-lib = ctypes.CDLL('./libPyList.so')
-lib.print_python_list_info.argtypes = [ctypes.py_object]
-l = ['hello', 'World']
-lib.print_python_list_info(l)
-del l[1]
-lib.print_python_list_info(l)
-l = l + [4, 5, 6.0, (9, 8), [9, 8, 1024], "My string"]
-lib.print_python_list_info(l)
-l = []
-lib.print_python_list_info(l)
-l.append(0)
-lib.print_python_list_info(l)
-l.append(1)
-l.append(2)
-l.append(3)
-l.append(4)
-lib.print_python_list_info(l)
-l.pop()
-lib.print_python_list_info(l)
+/**
+ * print_python_list_info - adds a new node at the end of a listint_t list
+ * @p: pointer PyObject
+ */
+void print_python_list_info(PyObject *p)
+{
+	long int l_size;
+	int i;
+	PyListObject *l_obj;
+
+	l_size = PyList_Size(p);
+	l_obj = (PyListObject *)p;
+	printf("[*] Size of the Python List = %li\n", l_size);
+	printf("[*] Allocated = %li\n", l_obj->allocated);
+	for (i = 0; i < l_size; i++)
+		printf("Element %i: %s\n", i, Py_TYPE(l_obj->ob_item[i])->tp_name);
+}
