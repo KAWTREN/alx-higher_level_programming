@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 def say_my_name(first_name, last_name=""):
     """
     Print a message with the provided first name and last name.
