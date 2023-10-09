@@ -1,4 +1,7 @@
-#!/usr/bin/python3
+#!/usr/bin/pythoni3
+"""available attributes"""
+
+
 def lookup(obj):
     """ Returns the list of available attributes and methods of an object"""
     return dir(obj)
