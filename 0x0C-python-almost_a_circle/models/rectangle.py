@@ -85,4 +85,9 @@ class rectangle:
     def __str__(self):
         """string"""
         return f"[Rectangle] ({self.id}) {self.x}/{self.y} - {self.width}/{self.height}"
-
+    def update(self, *args):
+        """ssigns an argument to each attribute """
+        if args:
+            atrb_names = ["id", "width", "height", "x", "y"]
+            for i, args in enumerate(atrb_names):
+                setattr (self, atrb_names[i], args)
