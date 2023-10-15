@@ -91,3 +91,8 @@ class rectangle:
             atrb_names = ["id", "width", "height", "x", "y"]
             for i, args in enumerate(atrb_names):
                 setattr (self, atrb_names[i], args)
+        else:
+            for key, value in kwargs.items():
+                setattr(self, key, value)
+            else:
+                raise ValueError(f"{key} is not attribute in this class")
