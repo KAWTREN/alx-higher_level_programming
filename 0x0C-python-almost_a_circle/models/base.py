@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""base class modul"""
+"""base class models"""
 
 
 class Base:
@@ -15,5 +15,5 @@ class Base:
         if id is not None:
             self.id = id
         else:
-            Bese.__nb_objects += 1
-            self.id = Bese.__nb_objects
+            Base.__nb_objects += 1
+            self.id = Base.__nb_objects
