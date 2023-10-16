@@ -1,14 +1,19 @@
 #!/usr/bin/python3
-"""base class models"""
+"""base class module"""
+
+from json import dump
+from json import dumps
+from json import loads
+import csv
 
 
 class Base:
-    """Base class"""
+    """Base Class"""
 
     __nb_objects = 0
 
     def __init__(self, id=None):
-        """int
+        """init
         args:
             id : int
         """
