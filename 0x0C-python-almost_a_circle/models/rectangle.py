@@ -1,30 +1,33 @@
 #!/usr/bin/python3
 """rectangle class models"""
 
-from models.Base import Base
+from models.base import Base
 
-class rectangle:
+
+class Rectangle:
     """rectangle class"""
 
     def __init__(self, width, height, x=0, y=0, id=None):
         """ init
         args:
-        width: int
-        height: int
-        x: int
-        y: int
+            width: int
+            height: int
+            x: int
+            y: int
         """
-        super().__int__(id)
+        super().__init__(id)
         self.width = width
         self.height = height
         self.x = x
         self.y = y
+
     @property
     def width(self):
         """width getter"""
         return self.__width
+
     @width.setter
-     def width(self, value):
+    def width(self, value):
         """width setter"""
         if not isinstance(value, int):
             raise TypeError("width must be an integer")
@@ -73,35 +76,44 @@ class rectangle:
         if value < 0:
             raise ValueError("y must be >= 0")
         self.__y = value
+
     def area(self):
         """calcul rectangle area"""
         return self.width * self.height
+
     def display(self):
         """prints in stdout the Rectangle"""
         for i in range(self.y):
             print()
         for i in range(self.height):
             print(" " * self.x + "#" * self.width)
+
     def __str__(self):
         """string"""
-        return f"[Rectangle] ({self.id}) {self.x}/{self.y} - {self.width}/{self.height}"
+        return f"[Rectangle] ({self.id}) {self.x}/{self.y}"\
+                f" - {self.width}/{self.height}"
+
     def update(self, *args):
-        """ssigns an argument to each attribute """
+        """ssigns an argument to each attribute"""
+
         if args:
             atrb_names = ["id", "width", "height", "x", "y"]
             for i, args in enumerate(atrb_names):
-                setattr (self, atrb_names[i], args)
+                if i < len(attr_list):
+                    setattr(self, atrb_names[i], args)
         else:
             for key, value in kwargs.items():
-                setattr(self, key, value)
-            else:
-                raise ValueError(f"{key} is not attribute in this class")
-        def to_dictionary(self):
-            """dictionary representation of a Rectangle"""
-            return {
-                    'id': self.id,
-                    'width': self.width,
-                    'height': self.height,
-                    'x': self.x,
-                    'y': self.y
-                    }
+                if setattr(self, key):
+                    setattr(self, key, value)
+                else:
+                    raise ValueError(f"{key} is not attribute in this class")
+
+    def to_dictionary(self):
+        """dictionary representation of a Rectangle"""
+        retangle_dict = {}
+        retangle_dict["id"] = self.id
+        retangle_dict["width"] = self.width
+        retangle_dict["height"] = self.height
+        retangle_dict["x"] = self.x
+        retangle_dict["y"] = self.y
+        return retangle_dict
