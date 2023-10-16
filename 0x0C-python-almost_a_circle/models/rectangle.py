@@ -96,3 +96,12 @@ class rectangle:
                 setattr(self, key, value)
             else:
                 raise ValueError(f"{key} is not attribute in this class")
+        def to_dictionary(self):
+            """dictionary representation of a Rectangle"""
+            return {
+                    'id': self.id,
+                    'width': self.width,
+                    'height': self.height,
+                    'x': self.x,
+                    'y': self.y
+                    }

@@ -1,14 +1,16 @@
-#!/usr/bin/python3\
+#!/usr/bin/python3
 """base class modul"""
 
 
 class Base:
     """Base class"""
+
     __nb_objects = 0
+
     def __init__(self, id=None):
         """int
         args:
-        id : int
+            id : int
         """
         if id is not None:
             self.id = id
