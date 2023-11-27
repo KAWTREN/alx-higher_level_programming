@@ -1,7 +1,12 @@
 #!/usr/bin/python3
-"""0-Rectangle module."""
+"""
+Module 0-rectangle
+function that create a Rectangle
+"""
 
 
 class Rectangle:
-    """Rectangle class."""
+    """
+    Empty Class
+    """
     pass
