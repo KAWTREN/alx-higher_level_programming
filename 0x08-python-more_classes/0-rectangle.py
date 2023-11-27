@@ -3,6 +3,6 @@
 
 
 class Rectangle:
-    """rectangle"""
+    """Rectangle"""
     
     pass
