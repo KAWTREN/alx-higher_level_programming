@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""0-Rectangle"""
+"""0-Rectangle module"""
 
 
 class Rectangle:
