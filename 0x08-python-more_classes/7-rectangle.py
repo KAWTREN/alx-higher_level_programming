@@ -48,13 +48,18 @@ class Rectangle:
             return 0
         else:
             return 2 * (self.width + self.height)
+        
     def __str__(self):
-        """rectangle with charachter #"""
-        if self.width == 0 or self.height == 0:
+        """Visualise the object representation."""
+        if self.__width == 0 or self.__height == 0:
             return ""
-        else:
-            s = ((self.width * f"{Rectangle.print_symbol}" + "\n") * self.height) .rstrip()
-            return s
+        rows = []
+        for x in range(self.__height):
+            row = "#" * self.__width
+            rows.append(row)
+        result = "\n".join(rows)
+        return result
+    
     def __repr__(self):
         return 'Rectangle({}, {})'.format(self.width, self.height)
     def __del__(self):
