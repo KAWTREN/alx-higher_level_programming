@@ -1,0 +1,30 @@
+The ''4-print_square'' module
+=================================
+using ''print_square''
+-----------------------------
+Import ''print_square'' from ''4-print_square'' midule:
+    >>> print_square = __import__("4-print_square").print_square
+size is a float:
+    >>>print_square(5,6)
+    Traceback (most recent call last):
+    ...
+    TypeError: size must be an integer
+size is a string:
+    >>> print_square("kawtar")
+    Traceback (most recent call last):
+    ...
+    TypeError: size must be an integer
+size less than 0:
+    print_square(-1)
+    Traceback (most recent call last):
+    ...
+    TypeError: size must be >= 0
+size == 0:
+    print_square(0)
+    ''
+
+size is an integer:
+    >>> print_square(3)
+    ###
+    ###
+    ###
