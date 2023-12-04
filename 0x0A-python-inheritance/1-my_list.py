@@ -1,5 +1,10 @@
 #!/usr/bin/python3
+"""MyList class"""
+
+
 class MyList(list):
+    """class MyList that inherites from list"""
+    
     def __init__(self):
         super().__init__()
         
