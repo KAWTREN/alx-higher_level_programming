@@ -1,7 +1,7 @@
 #!/usr/bin/python3
-"""save object to file"""
+"""create object from a json file"""
 import json
 def load_from_json_file(filename):
-    """writes an object to a text file using a json"""
+    """creates an object from a json"""
     with open(filename, 'r', encoding= 'utf-8',) as file:
         return(json.load(file))
