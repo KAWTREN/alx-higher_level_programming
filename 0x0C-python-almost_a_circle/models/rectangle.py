@@ -90,18 +90,25 @@ class Rectangle(Base):
     def __str__(self):
         """__str__"""
         
-        return f"[Rectangle] ({self.id}) {self.__x}/{self.__y} - {self.__width}/{self.__height}"
+        return f"[Rectangle] ({self.id}) {self.x}/{self.y} - {self.width}/{self.height}"
+    
     def update(self, *args, **kwargs):
-        """assigns an arguments to each attribute"""
-        
-        attr = ['id', 'width', 'height', 'x', 'y']
+        """update rectangle"""
+
+        # change every attr to args value
         if args:
-            for i in range(len(args)):
-                setattr(self, attr[i], args[i])
-        elif kwargs:
+            # attr list
+            attr_list = ["id", "width", "height", "x", "y"]
+            for i, value in enumerate(args):
+                if i < len(attr_list):
+                    setattr(self, attr_list[i], value)
+        else:
             for key, value in kwargs.items():
-                setattr(self, key, value)
+                if hasattr(self, key):
+                    setattr(self, key, value)
+                else:
+                    raise ValueError(f"{key} is not attribute in this class")
     def to_dictionary(self):
         """returns the dictionary representation"""
         
-        return {'id': self.id, 'width': self.height, 'height': self.height, 'x': self.x, 'y': self.y}
+        return {'id': self.id, 'width': self.width, 'height': self.height, 'x': self.x, 'y': self.y}
