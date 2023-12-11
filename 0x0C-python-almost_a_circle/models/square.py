@@ -9,7 +9,7 @@ class Square(Rectangle):
         super().__init__(size, size, x, y, id)
     def __str__(self):
         """__str"""
-        return f"[square] ({self.id}) {self.x}/{self.y} - {self.width} "
+        return f"[square] ({self.id}) {self.x}/{self.y} - {self.width}"
     @property
     def size(self):
         """Getter size"""
@@ -27,3 +27,6 @@ class Square(Rectangle):
         elif kwargs:
             for key, value in kwargs.items():
                 setattr(self, key, value)
+    def to_dictionary(self):
+        """returns dictionary """
+        return  {'id': self.id, 'size': self.size, 'x': self.x, 'y': self.y}
