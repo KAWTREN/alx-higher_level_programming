@@ -3,6 +3,7 @@
 
 
 import csv
+from distutils.command.config import dump_file
 import json
 
 class Base:
@@ -31,8 +32,8 @@ class Base:
             if list_objs:
                 for obj in list_objs:
                     mylist.append(
-                        loads(cls.to_json_string(obj.to_dictionary())))
-            dump(mylist, file)
+                        json.loads(cls.to_json_string(obj.to_dictionary())))
+            dump_file(mylist, file)
     def from_json_string(json_string):
         """Returns the list of dictionaries from the JSON string representation"""
         if json_string is None or json_string == "":
