@@ -4,6 +4,9 @@
 
 import csv
 from distutils.command.config import dump_file
+from json import dumps
+from json import dump
+from json import load
 import json
 
 class Base:
