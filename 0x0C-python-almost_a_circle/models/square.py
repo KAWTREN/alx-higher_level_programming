@@ -12,21 +12,25 @@ class Square(Rectangle):
         """initialization method"""
         
         super().__init__(size, size, x, y, id)
+        
     def __str__(self):
         """__str"""
         
         return f"[square] ({self.id}) {self.x}/{self.y} - {self.width}"
+    
     @property
     def size(self):
         """Getter size"""
         
         return self.height
+    
     @size.setter
     def size(self, value):
         """Setter size"""
         
         self.width = value
         self.height = value
+    
     def update(self, *args, **kwargs):
         attr = ['id', 'size', 'x', 'y']
         if args:
@@ -35,6 +39,7 @@ class Square(Rectangle):
         elif kwargs:
             for key, value in kwargs.items():
                 setattr(self, key, value)
+
     def to_dictionary(self):
         """returns dictionary """
         
