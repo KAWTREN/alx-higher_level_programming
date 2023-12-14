@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-
 """models/Square.py"""
 
 from models.rectangle import Rectangle
@@ -15,7 +14,7 @@ class Square(Rectangle):
     def __str__(self):
         """__str"""
         
-        return f"[square] ({self.id}) {self.x}/{self.y} - {self.width}"
+        return f"[Square] ({self.id}) {self.x}/{self.y} - {self.size}"
     
     @property
     def size(self):
