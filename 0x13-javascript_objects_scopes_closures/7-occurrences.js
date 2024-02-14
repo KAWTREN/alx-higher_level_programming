@@ -6,3 +6,4 @@ exports.nbOccurences = function (list, searchElement) {
     }
     return (cnt);
   };
+  
